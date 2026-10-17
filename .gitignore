@@ -1,0 +1,5 @@
+data/samples/
+data/*.log
+data/*.tmp
+__pycache__/
+.venv/
