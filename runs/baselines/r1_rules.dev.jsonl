@@ -1,10 +1,10 @@
-{"id": "pandas-33593141237", "category": "static_check", "confidence": "high", "evidence": [], "files": ["pandas/core/resample.py"], "explanation": "rules"}
+{"id": "pandas-33593141237", "category": "static_check", "confidence": "high", "evidence": [], "files": ["pandas/core/resample.py", "pandas/tests/frame/test_constructors.py"], "explanation": "rules"}
 {"id": "pandas-36521243989", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["pandas/tests/indexing/test_iloc.py", "pandas/tests/indexing/test_loc.py"], "explanation": "rules"}
-{"id": "pandas-37173593142", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/_testing/asserters.py", "pandas/tests/series/methods/test_isin.py"], "explanation": "rules"}
+{"id": "pandas-37173593142", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/_testing/asserters.py", "pandas/tests/series/methods/test_isin.py", "pandas/tests/extension/json/test_json.py"], "explanation": "rules"}
 {"id": "pandas-37494936515", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "pandas-37542200595", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/tests/util/test_assert_almost_equal.py", "pandas/tests/util/test_assert_attr_equal.py", "pandas/tests/util/test_assert_categorical_equal.py"], "explanation": "rules"}
 {"id": "pandas-37555374964", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["pandas/__init__.py"], "explanation": "rules"}
-{"id": "pandas-38087413366", "category": "static_check", "confidence": "high", "evidence": [], "files": ["pandas/core/tools/numeric.py"], "explanation": "rules"}
+{"id": "pandas-38087413366", "category": "static_check", "confidence": "high", "evidence": [], "files": ["pandas/core/tools/numeric.py", "pandas/tests/io/parser/test_parallel_read.py"], "explanation": "rules"}
 {"id": "pandas-38091308924", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/_testing/asserters.py", "pandas/tests/frame/test_stack_unstack.py"], "explanation": "rules"}
 {"id": "pandas-38104120537", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["pandas/tests/arrays/string_/test_string.py"], "explanation": "rules"}
 {"id": "pandas-38439306036", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
@@ -15,7 +15,7 @@
 {"id": "pandas-38571269719", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/tests/io/test_sql.py"], "explanation": "rules"}
 {"id": "pandas-38674628322", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "pandas-38696442913", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/_testing/asserters.py", "pandas/tests/groupby/aggregate/test_aggregate.py"], "explanation": "rules"}
-{"id": "pandas-38945975130", "category": "static_check", "confidence": "high", "evidence": [], "files": ["pandas/core/arrays/string_.py"], "explanation": "rules"}
+{"id": "pandas-38945975130", "category": "static_check", "confidence": "high", "evidence": [], "files": ["pandas/core/arrays/string_.py", "pandas/tests/io/parser/test_parallel_read.py", "pandas/tests/frame/test_constructors.py"], "explanation": "rules"}
 {"id": "pandas-38989178379", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["pandas/tests/io/test_parquet.py"], "explanation": "rules"}
 {"id": "spring-boot-29780604983", "category": "static_check", "confidence": "high", "evidence": [], "files": ["src/java.instrument/share/native/libinstrument/JPLISAgent.c"], "explanation": "rules"}
 {"id": "spring-boot-29845656001", "category": "code_defect", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
@@ -32,19 +32,19 @@
 {"id": "tokio-35082039847", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-36032500969", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-36776387661", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["quinn-udp/src/unix.rs"], "explanation": "rules"}
-{"id": "tokio-36908816767", "category": "dependency_env", "confidence": "low", "evidence": [], "files": ["tests/fail/macros_type_mismatch.rs", "DIR/tests/fail/macros_type_mismatch.rs"], "explanation": "rules"}
+{"id": "tokio-36908816767", "category": "dependency_env", "confidence": "low", "evidence": [], "files": ["tests/fail/macros_type_mismatch.rs", "DIR/tests/fail/macros_type_mismatch.rs", "tests/fail/macros_try_join.rs"], "explanation": "rules"}
 {"id": "tokio-37011910955", "category": "code_defect", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-37012294640", "category": "flaky_infra", "confidence": "high", "evidence": [], "files": ["tokio/tests/tcp_shutdown.rs"], "explanation": "rules"}
 {"id": "tokio-37012413432", "category": "test_issue", "confidence": "low", "evidence": [], "files": ["tokio/tests/fs_uring_runtime_shutdown.rs"], "explanation": "rules"}
 {"id": "tokio-37116496822", "category": "dependency_env", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-37352991484", "category": "dependency_env", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-37561155179", "category": "dependency_env", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
-{"id": "tokio-37648862902", "category": "code_defect", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
+{"id": "tokio-37648862902", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["src/lib.rs", "tests/_require_full.rs", "tests/abort_on_drop.rs"], "explanation": "rules"}
 {"id": "tokio-37649766839", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["tokio/src/macros/select.rs"], "explanation": "rules"}
 {"id": "tokio-37650181067", "category": "code_defect", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-37930879659", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["tokio/src/net/udp.rs"], "explanation": "rules"}
 {"id": "tokio-38039301919", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-38048775161", "category": "dependency_env", "confidence": "low", "evidence": [], "files": [], "explanation": "rules"}
 {"id": "tokio-38259978008", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["tests/client.rs"], "explanation": "rules"}
-{"id": "tokio-38523951228", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["tokio/tests/fs_uring.rs"], "explanation": "rules"}
-{"id": "tokio-38564226932", "category": "static_check", "confidence": "high", "evidence": [], "files": [], "explanation": "rules"}
+{"id": "tokio-38523951228", "category": "code_defect", "confidence": "low", "evidence": [], "files": ["tokio/tests/fs_uring.rs", "./rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/result.rs", "tokio/src/runtime/task/harness.rs"], "explanation": "rules"}
+{"id": "tokio-38564226932", "category": "static_check", "confidence": "high", "evidence": [], "files": ["tokio/src/runtime/io/driver.rs", "tokio/src/runtime/io/registration.rs"], "explanation": "rules"}

@@ -5,8 +5,9 @@ Scoring rules, fixed before any model ran (plan section 12 logs them):
   test samples the model under test helped label (annotation/sensitivity_excluded.txt; 74 remain).
 - A missing or unparsable prediction counts as `unsure` with low confidence.
 - `unsure` is wrong: a false negative for the true class, never a false positive.
-- Macro-F1 averages the six classes. A class with no gold sample, no prediction and so nothing to get right or
-  wrong in the set being scored (it can happen in a bootstrap resample) is left out of that average.
+- Macro-F1 averages over the classes that have at least one gold sample in the set being scored (all six in
+  the full dev and test sets; a bootstrap resample may lack one). The denominator depends on the gold labels
+  only, so two systems compared on the same resample share it. A class's F1 is 0 when it has no true positive.
 - High confidence = confidence "high" and category not `unsure`. Precision = accuracy on those; coverage = their
   share of all scored samples.
 - File hit@k: over scored samples whose gold category is code_defect, test_issue, static_check or ci_config and
@@ -48,23 +49,23 @@ def scored(split: str, sensitivity: bool) -> list[str]:
 def prediction(preds: dict, sample_id: str) -> dict:
     row = preds.get(sample_id) or {}
     category = row.get("category") if row.get("category") in CATEGORIES + ["unsure"] else "unsure"
-    return {"category": category, "confidence": row.get("confidence", "low"), "files": row.get("files") or []}
+    files = row.get("files") if isinstance(row.get("files"), list) else []
+    return {"category": category, "confidence": row.get("confidence", "low"),
+            "files": [f for f in files if isinstance(f, str)]}
 
 
 def macro_f1(pairs: list[tuple[str, str]], merge: bool = False) -> float:
     def fold(c: str) -> str:
         return "code_or_test" if merge and c in ("code_defect", "test_issue") else c
     pairs = [(fold(g), fold(p)) for g, p in pairs]
-    classes = sorted({fold(c) for c in CATEGORIES})
+    classes = sorted({g for g, _ in pairs})
     scores = []
     for c in classes:
         tp = sum(g == c and p == c for g, p in pairs)
         fp = sum(g != c and p == c for g, p in pairs)
         fn = sum(g == c and p != c for g, p in pairs)
-        if tp + fp + fn == 0:
-            continue
-        scores.append(2 * tp / (2 * tp + fp + fn))
-    return sum(scores) / len(scores) if scores else 0.0
+        scores.append(2 * tp / (2 * tp + fp + fn) if tp else 0.0)
+    return sum(scores) / len(scores)
 
 
 def norm(path: str) -> str:

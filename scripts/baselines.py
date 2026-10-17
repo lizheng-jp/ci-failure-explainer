@@ -3,7 +3,7 @@
 Rung 0 always answers the dev split's most common category. Rung 1 classifies by the failing job and step
 names and keywords in the error lines, and names files by pulling paths out of the error lines. The rules were
 written from general CI knowledge and the dev split only, revised once on dev (dependency errors before job
-names; check tasks named in the log), and frozen once committed.
+names; check tasks named in the log) and once after review (paths also from lines next to an error), then frozen.
 
     python scripts/baselines.py dev      # writes runs/baselines/{r0_majority,r1_rules}.dev.jsonl
 """
@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from inputs import clean, distinct_jobs, error_lines, labels, scored_ids  # noqa: E402
+from views import ERRORISH, NOT_ERROR, PASSED, failing_step  # noqa: E402
 
 OUT = Path("runs/baselines")
 
@@ -44,11 +45,17 @@ PATH = re.compile(r"(?<![\w/.-])((?:[\w.-]+/)+[\w.-]+\.(?:py|pyi|rs|go|java|kt|t
 def rules(sample_id: str) -> dict:
     repo = sample_id.rsplit("-", 1)[0]
     shown, _ = distinct_jobs(sample_id)
-    names, lines = [], []
+    names, lines, near = [], [], []
     for name, raw, _ in shown:
-        header, hits = error_lines(clean(list(raw)))
+        cleaned = clean(list(raw))
+        header, hits = error_lines(cleaned)
         names += [name, header]
         lines += hits
+        # Paths often sit on the line next to the error (traceback frames, "--> file:line").
+        _, step = failing_step(cleaned)
+        for n, text in enumerate(step):
+            if ERRORISH.search(text) and not NOT_ERROR.search(text) and not PASSED.search(text):
+                near += step[max(0, n - 1):n + 2]
     where, text = " ".join(names), "\n".join(lines)
     dependency = re.compile(DEPENDENCY.pattern.replace("{repo}", re.escape(repo)), re.I)
     if CI_CONFIG.search(text):
@@ -68,7 +75,7 @@ def rules(sample_id: str) -> dict:
     else:
         category, confidence = "unsure", "low"
     files = []
-    for path in PATH.findall(text):
+    for path in PATH.findall(text + "\n" + "\n".join(near)):
         path = re.sub(r"^.*?/(site-packages|work/[\w.-]+/[\w.-]+)/", "", path)
         if path not in files and not path.startswith(("/", "usr/", "home/")):
             files.append(path)

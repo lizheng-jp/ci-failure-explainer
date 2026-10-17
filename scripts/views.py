@@ -50,7 +50,11 @@ def failing_step(lines: list[str]) -> tuple[str, list[str]]:
     starts = [i for i in range(first) if lines[i].startswith("##[group]Run ")]
     begin = starts[-1] if starts else max(0, first - 400)
     header = lines[begin][len("##[group]"):] if starts else "(step header not found)"
-    return header, lines[begin + 1:errors[-1] + 1]
+    # End at the step's last error, not the job's: a later cleanup step can fail too.
+    following = [i for i in range(first + 1, len(lines)) if lines[i].startswith("##[group]Run ")]
+    stop = following[0] if following else len(lines)
+    end = max(i for i in errors if i < stop)
+    return header, lines[begin + 1:end + 1]
 
 
 def job_view(lines: list[str]) -> tuple[str, str]:
