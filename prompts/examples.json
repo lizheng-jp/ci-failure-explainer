@@ -1,0 +1,88 @@
+[
+ {
+  "id": "tokio-37649766839",
+  "category": "code_defect",
+  "confidence": "high",
+  "evidence": [
+   "test tokio/src/macros/select.rs - macros::select::select (line 796) ... FAILED",
+   "error[E0308]: mismatched types"
+  ],
+  "files": [
+   "tokio/src/macros/select.rs",
+   "tokio-macros/src/select.rs"
+  ],
+  "explanation": "A doc example inside the select! macro's source no longer compiles (mismatched types), so the macro's code or its documented example is wrong."
+ },
+ {
+  "id": "pandas-38467582153",
+  "category": "flaky_infra",
+  "confidence": "high",
+  "evidence": [
+   "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+   "ERROR: Subproject xsimd is buildable: NO"
+  ],
+  "files": [],
+  "explanation": "The build could not download a subproject because DNS lookups failed on the runner; nothing in the change is involved."
+ },
+ {
+  "id": "pandas-38087413366",
+  "category": "static_check",
+  "confidence": "high",
+  "evidence": [
+   "mypy.....................................................................Failed",
+   "pandas/core/tools/numeric.py:244: error: Incompatible types in assignment (expression has type \"NaTType\", variable has type \"Timedelta | Timestamp\")  [assignment]"
+  ],
+  "files": [
+   "pandas/core/tools/numeric.py"
+  ],
+  "explanation": "The type-checking job failed: mypy reports type errors in pandas/core/tools/numeric.py."
+ },
+ {
+  "id": "tokio-37116496822",
+  "category": "dependency_env",
+  "confidence": "high",
+  "evidence": [
+   "error[E0425]: cannot find value `NOTE_PCTRLMASK` in crate `libc`",
+   "error: could not compile `mio` (lib) due to 1 previous error"
+  ],
+  "files": [],
+  "explanation": "The dependency mio no longer compiles against the libc version resolved on FreeBSD; an upstream crate changed, not this repository's code."
+ },
+ {
+  "id": "pandas-38571269719",
+  "category": "test_issue",
+  "confidence": "high",
+  "evidence": [
+   "FAILED pandas/tests/io/test_sql.py::test_adbc_has_table_schema_with_no_tables - NameError: name 'DataFrame' is not defined"
+  ],
+  "files": [
+   "pandas/tests/io/test_sql.py"
+  ],
+  "explanation": "The test itself uses DataFrame without importing it, so the test code is broken."
+ },
+ {
+  "id": "tokio-38564226932",
+  "category": "static_check",
+  "confidence": "high",
+  "evidence": [
+   "error: method `reregister_source` is never used",
+   "error: method `reregister` is never used"
+  ],
+  "files": [
+   "tokio/src/io/async_fd.rs",
+   "tokio/src/runtime/io/driver.rs",
+   "tokio/src/runtime/io/registration.rs"
+  ],
+  "explanation": "The clippy job fails on dead-code errors: two methods are never used."
+ },
+ {
+  "id": "pandas-38488735939",
+  "category": "flaky_infra",
+  "confidence": "high",
+  "evidence": [
+   "requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  ],
+  "files": [],
+  "explanation": "The docs build failed because a remote server dropped the connection, a network problem unrelated to the change."
+ }
+]
