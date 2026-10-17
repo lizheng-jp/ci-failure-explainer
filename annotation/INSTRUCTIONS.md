@@ -70,3 +70,15 @@ Write one JSON object per line, in the order of `samples.txt`:
 ```json
 {"id": "pydantic-35248454086", "category": "code_defect", "files": ["pydantic/main.py"], "reason": "one short sentence"}
 ```
+
+## Adjudication clarifications (added in step 4, after all three annotators finished)
+
+Disputed samples were settled by a majority of three blind annotators (Claude, Codex, Gemini), none of whom saw
+these notes. They record how the final labels read the borderline cases.
+
+7. **A CI gate that fails on the PR's state** (draft PR, missing label or approval) is `undeterminable`: it is
+   not a failure of the code or the CI setup, and the vote went that way for two of the three such samples; the
+   third follows them.
+8. **A compiler error in a build or test step is `code_defect`**, even when a type checker produces it (for
+   example `tsc` inside `make ui-build`). `static_check` is for jobs whose only purpose is lint, format,
+   type-check or docs.

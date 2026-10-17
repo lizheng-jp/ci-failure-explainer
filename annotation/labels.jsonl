@@ -1,0 +1,146 @@
+{"id": "pandas-33593141237", "category": "static_check", "files": ["pandas/core/resample.py"]}
+{"id": "pandas-36521243989", "category": "test_issue", "files": ["pandas/tests/indexing/test_iloc.py", "pandas/tests/indexing/test_loc.py"]}
+{"id": "pandas-37173593142", "category": "code_defect", "files": ["pandas/core/arrays/datetimelike.py"]}
+{"id": "pandas-37494936515", "category": "static_check", "files": ["pandas/core/indexes/base.py", "pandas/core/indexes/datetimelike.py"]}
+{"id": "pandas-37542200595", "category": "code_defect", "files": ["pandas/core/reshape/merge.py"]}
+{"id": "pandas-37555374964", "category": "test_issue", "files": ["pandas/core/indexes/multi.py"]}
+{"id": "pandas-38087413366", "category": "static_check", "files": ["pandas/core/tools/numeric.py"]}
+{"id": "pandas-38091308924", "category": "test_issue", "files": ["pandas/tests/frame/test_stack_unstack.py"]}
+{"id": "pandas-38104120537", "category": "test_issue", "files": ["pandas/tests/arrays/string_/test_string.py"]}
+{"id": "pandas-38439306036", "category": "static_check", "files": ["pandas/core/arrays/base.py"]}
+{"id": "pandas-38467582153", "category": "flaky_infra", "files": []}
+{"id": "pandas-38488735939", "category": "flaky_infra", "files": []}
+{"id": "pandas-38497767710", "category": "flaky_infra", "files": []}
+{"id": "pandas-38502593513", "category": "flaky_infra", "files": []}
+{"id": "pandas-38571269719", "category": "test_issue", "files": ["pandas/tests/io/test_sql.py"]}
+{"id": "pandas-38674628322", "category": "flaky_infra", "files": []}
+{"id": "pandas-38696442913", "category": "test_issue", "files": ["pandas/tests/groupby/aggregate/test_aggregate.py"]}
+{"id": "pandas-38945975130", "category": "static_check", "files": ["pandas/core/arrays/string_.py"]}
+{"id": "pandas-38989178379", "category": "test_issue", "files": ["pandas/tests/io/test_parquet.py"]}
+{"id": "spring-boot-29780604983", "category": "static_check", "files": ["module/spring-boot-amqp/src/dockerTest/java/org/springframework/boot/amqp/testcontainers/ArtemisAmqpContainerConnectionDetailsFactoryIntegrationTests.java"]}
+{"id": "spring-boot-29845656001", "category": "code_defect", "files": ["module/spring-boot-opentelemetry/src/main/java/org/springframework/boot/opentelemetry/autoconfigure/logging/otlp/OtlpLoggingConfigurations.java"]}
+{"id": "spring-boot-30359052910", "category": "static_check", "files": ["core/spring-boot-test/src/main/java/org/springframework/boot/test/metrics/DisableGlobalMeterRegistryContextCustomizerFactory.java", "core/spring-boot-test/src/main/java/org/springframework/boot/test/metrics/package-info.java"]}
+{"id": "spring-boot-30873060095", "category": "undeterminable", "files": []}
+{"id": "spring-boot-31426330310", "category": "undeterminable", "files": []}
+{"id": "spring-boot-31472453870", "category": "static_check", "files": ["module/spring-boot-graphql/src/main/java/org/springframework/boot/graphql/autoconfigure/GraphQlProperties.java"]}
+{"id": "spring-boot-33046423250", "category": "code_defect", "files": ["module/spring-boot-webmvc/src/main/java/org/springframework/boot/webmvc/actuate/endpoint/web/AbstractWebMvcEndpointHandlerMapping.java"]}
+{"id": "spring-boot-33112362460", "category": "static_check", "files": ["build-plugin/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/plugin/KotlinMultiplatformPluginActionTest.java", "build-plugin/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/plugin/KotlinMultiplatformPluginActionTests.java"]}
+{"id": "spring-boot-33125612425", "category": "code_defect", "files": ["core/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/TestSliceTestContextBootstrapper.java", "core/spring-boot-test/src/main/java/org/springframework/boot/test/context/filter/annotation/StandardAnnotationCustomizableTypeExcludeFilter.java", "core/spring-boot-test/src/main/java/org/springframework/boot/test/context/filter/annotation/TypeExcludeFiltersContextCustomizer.java", "core/spring-boot-test/src/main/java/org/springframework/boot/test/context/filter/annotation/TypeExcludeFiltersContextCustomizerFactory.java"]}
+{"id": "spring-boot-35128514055", "category": "test_issue", "files": ["module/spring-boot-batch-data-mongodb/src/test/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfigurationTests.java"]}
+{"id": "spring-boot-35962343163", "category": "static_check", "files": ["core/spring-boot/src/main/java/org/springframework/boot/context/properties/bind/Binder.java"]}
+{"id": "spring-boot-35997108430", "category": "code_defect", "files": ["module/spring-boot-webmvc/src/main/java/org/springframework/boot/webmvc/actuate/endpoint/web/AbstractWebMvcEndpointHandlerMapping.java"]}
+{"id": "spring-boot-37478526612", "category": "undeterminable", "files": []}
+{"id": "spring-boot-38227582995", "category": "dependency_env", "files": []}
+{"id": "spring-boot-38742986763", "category": "dependency_env", "files": []}
+{"id": "tokio-35082039847", "category": "static_check", "files": ["tokio-stream/tests/time_throttle.rs"]}
+{"id": "tokio-36032500969", "category": "static_check", "files": ["tokio/src/runtime/io/driver.rs", "tokio/src/runtime/io/mod.rs", "tokio/src/runtime/io/registration.rs", "tokio/src/runtime/io/registration_set.rs", "tokio/src/runtime/tests/loom_io.rs"]}
+{"id": "tokio-36776387661", "category": "flaky_infra", "files": []}
+{"id": "tokio-36908816767", "category": "dependency_env", "files": []}
+{"id": "tokio-37011910955", "category": "flaky_infra", "files": []}
+{"id": "tokio-37012294640", "category": "flaky_infra", "files": []}
+{"id": "tokio-37012413432", "category": "flaky_infra", "files": []}
+{"id": "tokio-37116496822", "category": "dependency_env", "files": []}
+{"id": "tokio-37352991484", "category": "dependency_env", "files": []}
+{"id": "tokio-37561155179", "category": "dependency_env", "files": []}
+{"id": "tokio-37648862902", "category": "test_issue", "files": ["tokio-util/tests/task_join_map.rs"]}
+{"id": "tokio-37649766839", "category": "code_defect", "files": ["tokio-macros/src/select.rs", "tokio/src/macros/select.rs"]}
+{"id": "tokio-37650181067", "category": "test_issue", "files": ["tokio/tests/fs_file.rs"]}
+{"id": "tokio-37930879659", "category": "flaky_infra", "files": []}
+{"id": "tokio-38039301919", "category": "static_check", "files": ["spellcheck.dic"]}
+{"id": "tokio-38048775161", "category": "dependency_env", "files": []}
+{"id": "tokio-38259978008", "category": "code_defect", "files": ["tokio-util/src/codec/length_delimited.rs"]}
+{"id": "tokio-38523951228", "category": "ci_config", "files": [".github/workflows/uring-kernel-version-test.yml"]}
+{"id": "tokio-38564226932", "category": "static_check", "files": ["tokio/src/io/async_fd.rs", "tokio/src/runtime/io/driver.rs", "tokio/src/runtime/io/registration.rs"]}
+{"id": "kafka-31187243663", "category": "static_check", "files": ["streams/src/test/java/org/apache/kafka/streams/processor/internals/StreamThreadTest.java"]}
+{"id": "kafka-31396965174", "category": "flaky_infra", "files": []}
+{"id": "kafka-35963399303", "category": "undeterminable", "files": []}
+{"id": "kafka-36323025054", "category": "undeterminable", "files": []}
+{"id": "kafka-36422964308", "category": "undeterminable", "files": []}
+{"id": "kafka-36554930299", "category": "flaky_infra", "files": []}
+{"id": "kafka-36623982156", "category": "code_defect", "files": ["jmh-benchmarks/src/main/java/org/apache/kafka/jmh/assignor/TargetAssignmentBuilderBenchmark.java"]}
+{"id": "kafka-36628659212", "category": "undeterminable", "files": []}
+{"id": "kafka-36908727183", "category": "undeterminable", "files": []}
+{"id": "kafka-36990220385", "category": "flaky_infra", "files": []}
+{"id": "kafka-37487208730", "category": "undeterminable", "files": []}
+{"id": "kafka-37517153208", "category": "test_issue", "files": ["streams/src/test/java/org/apache/kafka/streams/state/internals/SessionToHeadersStoreAdapterTest.java", "streams/src/test/java/org/apache/kafka/streams/state/internals/TimestampedToHeadersIteratorAdapterTest.java", "streams/src/test/java/org/apache/kafka/streams/state/internals/TimestampedToHeadersWindowStoreAdapterTest.java"]}
+{"id": "kafka-37606154842", "category": "flaky_infra", "files": []}
+{"id": "kafka-37931576587", "category": "static_check", "files": ["jmh-benchmarks/src/main/java/org/apache/kafka/jmh/assignor/AssignmentRefinerBenchmark.java"]}
+{"id": "kafka-38247243525", "category": "test_issue", "files": ["core/src/test/scala/unit/kafka/server/DynamicBrokerConfigTest.scala"]}
+{"id": "kafka-38528083398", "category": "undeterminable", "files": []}
+{"id": "kafka-38597945717", "category": "flaky_infra", "files": []}
+{"id": "prometheus-31154875707", "category": "dependency_env", "files": []}
+{"id": "prometheus-34971371682", "category": "flaky_infra", "files": []}
+{"id": "prometheus-35328962364", "category": "flaky_infra", "files": []}
+{"id": "prometheus-37331615744", "category": "undeterminable", "files": []}
+{"id": "prometheus-37727862532", "category": "code_defect", "files": ["web/ui/module/codemirror-promql/src/parser/utf8.ts"]}
+{"id": "prometheus-37791793231", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38051781656", "category": "dependency_env", "files": []}
+{"id": "prometheus-38131266760", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38131271445", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38161501187", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38227894472", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38393492397", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38420393213", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38561395622", "category": "code_defect", "files": ["cmd/promtool/backfill.go", "cmd/promtool/rules.go", "cmd/promtool/tsdb.go", "tsdb/tsdbblockutil.go"]}
+{"id": "prometheus-38595186974", "category": "dependency_env", "files": []}
+{"id": "prometheus-38605612109", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38750084875", "category": "flaky_infra", "files": []}
+{"id": "prometheus-38765919542", "category": "test_issue", "files": ["storage/remote/write_otlp_handler_test.go"]}
+{"id": "prometheus-38911305775", "category": "dependency_env", "files": []}
+{"id": "pydantic-30064359827", "category": "dependency_env", "files": []}
+{"id": "pydantic-30487705323", "category": "test_issue", "files": ["tests/test_edge_cases.py"]}
+{"id": "pydantic-30848923710", "category": "flaky_infra", "files": []}
+{"id": "pydantic-30953585132", "category": "code_defect", "files": ["pydantic/types.py"]}
+{"id": "pydantic-31010091964", "category": "static_check", "files": ["pydantic/_internal/_fields.py"]}
+{"id": "pydantic-31971978623", "category": "flaky_infra", "files": []}
+{"id": "pydantic-32018374888", "category": "ci_config", "files": [".github/workflows/third-party.yml"]}
+{"id": "pydantic-32306072431", "category": "test_issue", "files": ["tests/test_docs_navigation_workflow.py"]}
+{"id": "pydantic-32913728600", "category": "static_check", "files": ["docs/integrations/logfire.md"]}
+{"id": "pydantic-33066070414", "category": "static_check", "files": [".github/workflows/ci.yml"]}
+{"id": "pydantic-33658587338", "category": "flaky_infra", "files": []}
+{"id": "pydantic-34356332687", "category": "static_check", "files": ["tests/test_freethreaded.py"]}
+{"id": "pydantic-34586434258", "category": "static_check", "files": ["pydantic/main.py"]}
+{"id": "pydantic-35248399268", "category": "flaky_infra", "files": []}
+{"id": "pydantic-35248454086", "category": "static_check", "files": ["pydantic/plugin/__init__.py"]}
+{"id": "pydantic-35499357639", "category": "static_check", "files": ["tests/typechecking/decorators.py"]}
+{"id": "pydantic-36081183687", "category": "test_issue", "files": []}
+{"id": "pydantic-38096684809", "category": "flaky_infra", "files": []}
+{"id": "pydantic-38384131709", "category": "static_check", "files": ["pydantic/root_model.py"]}
+{"id": "uv-36553099456", "category": "test_issue", "files": ["crates/uv/tests/project/run.rs"]}
+{"id": "uv-36783477168", "category": "code_defect", "files": ["crates/uv-install-wheel/src/uninstall.rs"]}
+{"id": "uv-37047376974", "category": "ci_config", "files": [".github/workflows/bench.yml"]}
+{"id": "uv-37057475376", "category": "code_defect", "files": ["crates/uv-lock/src/lock/installable.rs", "crates/uv-lock/src/lock/mod.rs", "crates/uv-lock/src/lock/serialize.rs", "crates/uv/src/commands/project/lock.rs", "crates/uv/src/commands/project/lock_target.rs"]}
+{"id": "uv-37067151942", "category": "flaky_infra", "files": []}
+{"id": "uv-37326114256", "category": "flaky_infra", "files": []}
+{"id": "uv-37415331709", "category": "flaky_infra", "files": []}
+{"id": "uv-37434649635", "category": "flaky_infra", "files": []}
+{"id": "uv-37438409349", "category": "flaky_infra", "files": []}
+{"id": "uv-37487643664", "category": "test_issue", "files": []}
+{"id": "uv-37650168842", "category": "static_check", "files": ["crates/uv-pep508/src/marker/tree.rs"]}
+{"id": "uv-37870314322", "category": "static_check", "files": ["crates/uv/src/commands/self_update.rs"]}
+{"id": "uv-38033436931", "category": "static_check", "files": ["docs/guides/scripts.md"]}
+{"id": "uv-38226225749", "category": "test_issue", "files": ["crates/uv/tests/build/build.rs", "crates/uv/tests/pip_install/pip_install.rs", "crates/uv/tests/sync/sync.rs", "crates/uv/tests/tool/tool_install.rs"]}
+{"id": "uv-38380089013", "category": "static_check", "files": ["crates/uv/Cargo.toml"]}
+{"id": "uv-38658098423", "category": "flaky_infra", "files": []}
+{"id": "uv-38737483765", "category": "flaky_infra", "files": []}
+{"id": "uv-38803708458", "category": "static_check", "files": ["Cargo.toml", "crates/uv-macho/src/format.rs", "crates/uv-macho/src/lib.rs"]}
+{"id": "uv-38897971273", "category": "static_check", "files": ["crates/uv-distribution-types/src/variants_json.rs"]}
+{"id": "vite-31580067380", "category": "static_check", "files": ["playground/assets-sanitize/__tests__/assets-sanitize.spec.ts", "playground/dynamic-import/__tests__/dynamic-import.spec.ts", "playground/fs-serve/__tests__/commonTests.ts"]}
+{"id": "vite-33417697537", "category": "flaky_infra", "files": []}
+{"id": "vite-34112390669", "category": "dependency_env", "files": []}
+{"id": "vite-34998163434", "category": "flaky_infra", "files": []}
+{"id": "vite-35232814505", "category": "test_issue", "files": ["playground/js-sourcemap/__tests__/js-sourcemap.spec.ts"]}
+{"id": "vite-35263531980", "category": "test_issue", "files": ["packages/vite/src/node/ssr/__tests__/ssrStacktrace.spec.ts"]}
+{"id": "vite-35345381481", "category": "flaky_infra", "files": []}
+{"id": "vite-35481386419", "category": "flaky_infra", "files": []}
+{"id": "vite-35614367938", "category": "flaky_infra", "files": []}
+{"id": "vite-35719566878", "category": "static_check", "files": ["playground/extensions/__tests__/extensions.spec.ts", "playground/tsconfig-json/__tests__/tsconfig-json.spec.ts"]}
+{"id": "vite-35968299449", "category": "flaky_infra", "files": []}
+{"id": "vite-36519961197", "category": "static_check", "files": ["packages/vite/src/node/plugins/importAnalysis.ts"]}
+{"id": "vite-37130089727", "category": "test_issue", "files": ["playground/vitestSetup.ts"]}
+{"id": "vite-37719112721", "category": "flaky_infra", "files": []}
+{"id": "vite-37765222898", "category": "flaky_infra", "files": []}
+{"id": "vite-37899478039", "category": "flaky_infra", "files": []}
+{"id": "vite-37900216782", "category": "test_issue", "files": ["playground/css-sourcemap/__tests__/css-sourcemap.spec.ts"]}
+{"id": "vite-38397358141", "category": "static_check", "files": ["packages/vite/src/node/config.ts"]}
+{"id": "vite-38727972289", "category": "dependency_env", "files": []}

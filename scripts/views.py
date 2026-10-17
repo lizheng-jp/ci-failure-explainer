@@ -19,6 +19,8 @@ ERRORISH = re.compile(r"(##\[error\]|\berror\b|\bfailed\b|\bfailure\b|\bFAIL\b|p
                       r"assert|timed out|not found)", re.IGNORECASE)
 WARNISH = re.compile(r"\bWARNING\b|\bWarning:|treated as errors")
 NOT_ERROR = re.compile(r"\b0 (failed|errors?)\b|--fail|failure_error|error_on|errors=0", re.IGNORECASE)
+# Passing-test reports whose test names happen to contain "error" or "assert" (nextest, cargo test, pytest, go).
+PASSED = re.compile(r"^\s*PASS \[|\.\.\. ok$|\bPASSED\b|^ok\s+\S|^\S+ [.sxX]+\s*\[\s*\d+%\]$")
 STEP_TAIL = 50
 MAX_JOBS = 3
 MAX_GREP = 25
@@ -57,7 +59,8 @@ def job_view(lines: list[str]) -> tuple[str, str]:
     step = [text for text in step if not NOISE.search(text)]
     hits, seen = [], set()
     for text in step:
-        if (ERRORISH.search(text) or WARNISH.search(text)) and not NOT_ERROR.search(text) and text not in seen:
+        if (ERRORISH.search(text) or WARNISH.search(text)) and not NOT_ERROR.search(text) and not PASSED.search(text) \
+                and text not in seen:
             seen.add(text)
             hits.append(text[:300])
     chunks = [f"-- failing step: {header[:200]}"]
