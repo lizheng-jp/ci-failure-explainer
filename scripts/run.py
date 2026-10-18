@@ -23,7 +23,7 @@ from score import metrics  # noqa: E402
 MODEL = "gemini-3.8-flash"
 PRICE = {"input": 0.375, "output": 1.875}  # US$ per million tokens, batch (third-party figures, 2026-10-18)
 SYNC_FACTOR = 2  # synchronous calls cost twice the batch price
-MAX_BATCH_BYTES = 15_000_000  # inline batches are limited to 20 MB
+MAX_BATCH_BYTES = 4_000_000  # ~1M tokens: a 15 MB batch hit the enqueued-token quota (429) on 2026-10-18
 BUDGET = 30.0
 OUTPUT_GUESS = {"low": 250, "medium": 600}  # output tokens incl. thinking; r1 smoke measured ~180 and ~430
 RUNS = Path("runs")
@@ -150,11 +150,14 @@ def submit(client, round_name: str) -> None:
         if n < len(record):
             assert record[n]["keys"] == [k for k, _ in batch], "batch split changed since the last submit"
             continue
-        job = client.batches.create(model=MODEL, src=[r for _, r in batch],
-                                    config={"display_name": f"ci-explainer-{round_name}-{n}"})
+        try:
+            job = client.batches.create(model=MODEL, src=[r for _, r in batch],
+                                        config={"display_name": f"ci-explainer-{round_name}-{n}"})
+        except Exception as error:  # noqa: BLE001 - quota: resume later, nothing is lost
+            sys.exit(f"stopped at batch {n} of {len(batches)}: {str(error)[:160]}; rerun submit later")
         record.append({"job": job.name, "keys": [k for k, _ in batch]})
         record_path.write_text(json.dumps(record, indent=1))
-        print(job.name, len(batch))
+        print(job.name, len(batch), f"({n + 1} of {len(batches)})")
 
 
 def status(client, round_name: str) -> list:

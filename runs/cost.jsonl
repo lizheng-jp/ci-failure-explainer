@@ -1,2 +1,8 @@
 {"round": "r1", "what": "smoke", "requests": 3, "usd": 0.0194, "at": 1792277308.818934}
 {"round": "r1", "what": "smoke", "requests": 3, "usd": 0.0202, "at": 1792278682.166545}
+{"round": "labels", "what": "gemini-3.1-pro tie-break batch (17 requests) that completed despite the cancel; estimated, not measured", "usd": 0.25, "at": 1792281461.3448162}
+{"round": "r1", "what": "batch", "job": "batches/kfrjpnzroauc4a20e13yspncax16meiozlvo", "requests": 164, "usd": 0.7846, "at": 1792281667.642682}
+{"round": "r1", "what": "batch", "job": "batches/vv89r75p3484jhf9jr1je5cjuom8qh1f3igu", "requests": 87, "usd": 0.8464, "at": 1792281955.690689}
+{"round": "r1", "what": "batch", "job": "batches/8qmfegw441phk5sa7m8xjw2obv63wud82n5z", "requests": 129, "usd": 0.8116, "at": 1792281957.002162}
+{"round": "r1", "what": "batch", "job": "batches/qua0m863ymij52hhm20nlejd57h5ty5xhsif", "requests": 152, "usd": 0.633, "at": 1792281958.465603}
+{"round": "r1", "what": "batch", "job": "batches/f9th9lzysdbfoyfb9ve6quculubl015uetwn", "requests": 68, "usd": 0.448, "at": 1792281960.036185}
