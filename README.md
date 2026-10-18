@@ -8,6 +8,9 @@ What makes it more than a prompt: the configuration was chosen by a **pre-regist
 CI failures from 8 open-source repositories, with frozen labels, a held-out test set of 5 repositories and an
 ablation ladder. The full write-up is in [docs/report.en.md](docs/report.en.md).
 
+**Live example:** [lizheng-jp/ci-failure-explainer-demo#1](https://github.com/lizheng-jp/ci-failure-explainer-demo/pull/1),
+a pull request with a deliberate pricing bug; the action's comment names the cause and the file.
+
 ## Results on the held-out test set (85 failures, 5 repositories)
 
 | | Rules baseline | This action |
