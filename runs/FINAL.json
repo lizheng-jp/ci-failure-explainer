@@ -1,0 +1,7 @@
+{"frozen": "2026-10-18", "model": "gemini-3.8-flash", "thinking": "low",
+ "final": {"rung": 2, "tail": 200, "files": 1, "shots": 0, "prompt": 1, "clean": 0},
+ "originalRuleFinal": {"rung": 2, "tail": 200, "files": 0, "shots": 0, "prompt": 1, "clean": 0},
+ "ladder": {"2": {"rung": 2, "tail": 200}, "3": {"rung": 3, "tail": 200},
+            "4": {"rung": 4, "chunk": 200, "k": 4, "query": "fixed"},
+            "5": {"rung": 5, "chunk": 200, "k": 4, "query": "fixed"},
+            "6": {"rung": 6, "chunk": 200, "k": 4, "query": "fixed", "shots": 3}}}

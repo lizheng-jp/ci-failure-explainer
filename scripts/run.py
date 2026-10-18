@@ -43,6 +43,11 @@ ROUNDS = {
            **{f"x_tail200_files_s{n}": (config(rung=2, tail=200, files=1, shots=n), "low") for n in (3, 6)},
            **{f"x_tail200_files_v2_s{n}": (config(rung=2, tail=200, files=1, shots=n, prompt=2), "low")
               for n in (0, 3, 6)}},
+    # Step 6, run once: every ladder rung and the frozen final system (runs/FINAL.json) on the test split.
+    # Rung 2 is also the final system under the original rules.
+    "test": {**{f"rung{r}": (config(**{k: v for k, v in c.items()}), "low")
+                for r, c in json.load(open("runs/FINAL.json"))["ladder"].items()},
+             "final": (config(**json.load(open("runs/FINAL.json"))["final"]), "low")},
 }
 
 
@@ -50,7 +55,7 @@ def requests(round_name: str) -> list[tuple[str, str, dict, str]]:
     """(key, sample id, config, thinking level) for every request of the round, dev split only."""
     out = []
     for name, (cfg, think) in ROUNDS[round_name].items():
-        for sample_id in scored_ids("dev"):
+        for sample_id in scored_ids("test" if round_name == "test" else "dev"):
             out.append((f"{name}|{sample_id}", sample_id, cfg, think))
     return out
 

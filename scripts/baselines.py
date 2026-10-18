@@ -85,11 +85,11 @@ def rules(sample_id: str) -> dict:
 
 def main() -> None:
     split = sys.argv[1]
-    if split != "dev":
+    if split not in ("dev", "test") or (split == "test" and not Path("runs/FINAL.json").exists()):
         sys.exit("baselines run on test only in step 6, after the final system is frozen")
     OUT.mkdir(parents=True, exist_ok=True)
-    ids = scored_ids("dev")
-    majority = Counter(labels()[i]["category"] for i in ids).most_common(1)[0][0]
+    ids = scored_ids(split)
+    majority = Counter(labels()[i]["category"] for i in scored_ids("dev")).most_common(1)[0][0]
     with open(OUT / f"r0_majority.{split}.jsonl", "w") as out:
         for i in ids:
             out.write(json.dumps({"id": i, "category": majority, "confidence": "low", "evidence": [], "files": [],
