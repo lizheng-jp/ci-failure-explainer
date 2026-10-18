@@ -38,7 +38,7 @@ LADDER = {
     5: {"clean": 1, "context": "retrieve", "files": 1, "shots": 0},
     6: {"clean": 1, "context": "retrieve", "files": 1, "shots": 3},
 }
-DEFAULTS = {"tail": 200, "chunk": 400, "k": 8, "query": "fixed"}
+DEFAULTS = {"tail": 200, "chunk": 400, "k": 8, "query": "fixed", "prompt": 1}
 FIXED_QUERY = "error failure cause"
 BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 
@@ -70,6 +70,17 @@ Answer in JSON:
 - evidence: up to 3 log lines that support the answer, copied exactly.
 - files: up to 3 repository file paths most likely to need a change, most likely first; [] if none.
 - explanation: one or two sentences."""
+
+# Prompt v2 (round 3), written from round 1-2 dev errors before any round 3 result: test_issue was missed
+# (recall 0.20, often answered unsure), flaky failures read as real ones, and unsure is always scored wrong.
+PROMPT_V2_RULES = """
+- Compare the failure with the files the pull request changes. A failing test file that the pull request
+  edited, while the error does not point into non-test code it changed, suggests test_issue. An error inside
+  non-test code the pull request changed suggests code_defect.
+- A failure in a test or job that none of the changed files touch, especially a timeout, crash, network error or
+  a timing-sensitive test, suggests flaky_infra.
+- Answer unsure only when the log shows no concrete error; otherwise pick the most likely category and say
+  "low" confidence."""
 
 SCHEMA = {
     "type": "object",
@@ -317,7 +328,7 @@ def examples(sample_id: str, cfg: dict) -> tuple[list[str], str]:
 def config(**overrides) -> dict:
     rung = int(overrides.pop("rung", 2))
     cfg = {**LADDER[rung], **DEFAULTS, **overrides}
-    for key in ("clean", "tail", "chunk", "k", "files", "shots"):
+    for key in ("clean", "tail", "chunk", "k", "files", "shots", "prompt"):
         cfg[key] = int(cfg[key])
     return cfg
 
@@ -325,6 +336,8 @@ def config(**overrides) -> dict:
 def prompt(sample_id: str, cfg: dict) -> tuple[str, str, list[str]]:
     """System instruction, user content, and the ids of any examples used."""
     system = SYSTEM.format(files_note=" and the files the pull request changes" if cfg["files"] else "")
+    if cfg["prompt"] == 2:
+        system = system.replace("\n\nAnswer in JSON:", PROMPT_V2_RULES + "\n\nAnswer in JSON:")
     chosen, shots = examples(sample_id, cfg) if cfg["shots"] else ([], "")
     user = (shots + "\n\n# The run to diagnose\n" if shots else "") + body(sample_id, cfg)
     return system, user, chosen

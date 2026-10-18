@@ -36,6 +36,13 @@ ROUNDS = {
     "r2": {**{f"r{rung}_c{c}_k{k}_{q}": (config(rung=rung, chunk=c, k=k, query=q), "low")
               for rung in (4, 5) for c in (200, 400) for k in (4, 8) for q in ("fixed", "step")},
            "x_tail200_files": (config(rung=2, tail=200, files=1), "low")},
+    # Round 3: rung 6 on the ladder (selected rung 5 + 3 / 6 examples), the same examples on the final system's
+    # base (tail 200 + files, plan section 12 deviation), and prompt v2 on that base with 0 / 3 / 6 examples.
+    "r3": {**{f"r6_c200_k4_fixed_s{n}": (config(rung=6, chunk=200, k=4, query="fixed", shots=n), "low")
+              for n in (3, 6)},
+           **{f"x_tail200_files_s{n}": (config(rung=2, tail=200, files=1, shots=n), "low") for n in (3, 6)},
+           **{f"x_tail200_files_v2_s{n}": (config(rung=2, tail=200, files=1, shots=n, prompt=2), "low")
+              for n in (0, 3, 6)}},
 }
 
 
