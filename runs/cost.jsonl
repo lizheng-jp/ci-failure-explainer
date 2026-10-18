@@ -15,3 +15,7 @@
 {"round": "r3", "what": "batch", "job": "batches/rp92ui4uzkqx2nsfrus0eki9r8ym2v6ycukz", "requests": 111, "usd": 0.724, "at": 1792284283.2580512}
 {"round": "r3", "what": "batch", "job": "batches/eedfq4ywkiq8sua5x01a3py9m7ywixxkansx", "requests": 75, "usd": 0.5115, "at": 1792284284.344922}
 {"round": "test", "what": "smoke", "requests": 3, "usd": 0.0374, "at": 1792285039.0335171}
+{"round": "test", "what": "batch", "job": "batches/nyvw9fiptbxs80b1r3juf1zp5s9t12ow3v8j", "requests": 88, "usd": 0.8134, "at": 1792285424.662751}
+{"round": "test", "what": "batch", "job": "batches/ceyeo35kg7p42lztr8hnur8xo29rezqkmkh9", "requests": 271, "usd": 0.4316, "at": 1792285426.02301}
+{"round": "test", "what": "batch", "job": "batches/7znx90gsk6to113d7f7dug41st96mebkdxwj", "requests": 132, "usd": 0.7342, "at": 1792285427.3171232}
+{"round": "test", "what": "batch", "job": "batches/j0w48fjbpu2fow5uvu6i777k26sflqqofoid", "requests": 19, "usd": 0.1493, "at": 1792285428.3484612}

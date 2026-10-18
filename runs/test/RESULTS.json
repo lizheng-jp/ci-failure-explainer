@@ -1,0 +1,2114 @@
+{
+ "85 (all)": {
+  "systems": {
+   "rung0 majority": {
+    "n": 85,
+    "macroF1": 0.06349206349206349,
+    "accuracy": 0.23529411764705882,
+    "coarseMacroF1": 0.07619047619047618,
+    "unsure": 0,
+    "missing": 0,
+    "highPrecision": null,
+    "highCoverage": 0.0,
+    "fileN": 39,
+    "fileHit1": 0.0,
+    "fileHit3": 0.0,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": null,
+      "recall": 0.0
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": null,
+      "recall": 0.0
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": null,
+      "recall": 0.0
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.23529411764705882,
+      "recall": 1.0
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": null,
+      "recall": 0.0
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->static_check",
+      37
+     ],
+     [
+      "test_issue->static_check",
+      13
+     ],
+     [
+      "dependency_env->static_check",
+      7
+     ],
+     [
+      "code_defect->static_check",
+      6
+     ],
+     [
+      "ci_config->static_check",
+      2
+     ]
+    ],
+    "macroF1CI": [
+     0.044,
+     0.088
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.083,
+      "accuracy": 0.2
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.096,
+      "accuracy": 0.316
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.0,
+      "accuracy": 0.0
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.099,
+      "accuracy": 0.421
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.087,
+      "accuracy": 0.211
+     }
+    }
+   },
+   "rung1 rules": {
+    "n": 85,
+    "macroF1": 0.3649093164701491,
+    "accuracy": 0.5411764705882353,
+    "coarseMacroF1": 0.41174763909432244,
+    "unsure": 1,
+    "missing": 0,
+    "highPrecision": 0.6551724137931034,
+    "highCoverage": 0.6823529411764706,
+    "fileN": 39,
+    "fileHit1": 0.23076923076923078,
+    "fileHit3": 0.28205128205128205,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.07692307692307693,
+      "recall": 0.16666666666666666
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 0.5,
+      "recall": 0.46153846153846156
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.14285714285714285
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.6666666666666666,
+      "recall": 0.9
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 0.6451612903225806,
+      "recall": 0.5405405405405406
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      10
+     ],
+     [
+      "test_issue->flaky_infra",
+      5
+     ],
+     [
+      "flaky_infra->test_issue",
+      5
+     ],
+     [
+      "dependency_env->static_check",
+      4
+     ],
+     [
+      "code_defect->static_check",
+      3
+     ],
+     [
+      "test_issue->code_defect",
+      2
+     ],
+     [
+      "flaky_infra->static_check",
+      2
+     ],
+     [
+      "dependency_env->flaky_infra",
+      2
+     ],
+     [
+      "static_check->flaky_infra",
+      2
+     ],
+     [
+      "ci_config->flaky_infra",
+      1
+     ],
+     [
+      "code_defect->flaky_infra",
+      1
+     ],
+     [
+      "ci_config->unsure",
+      1
+     ],
+     [
+      "code_defect->test_issue",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.271,
+     0.486
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.393,
+      "accuracy": 0.4
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.417,
+      "accuracy": 0.684
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.196,
+      "accuracy": 0.5
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.426,
+      "accuracy": 0.579
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.41,
+      "accuracy": 0.474
+     }
+    }
+   },
+   "rung2 tail200": {
+    "n": 85,
+    "macroF1": 0.6666527561668226,
+    "accuracy": 0.6,
+    "coarseMacroF1": 0.7266537384184443,
+    "unsure": 8,
+    "missing": 0,
+    "highPrecision": 0.684931506849315,
+    "highCoverage": 0.8588235294117647,
+    "fileN": 39,
+    "fileHit1": 0.6923076923076923,
+    "fileHit3": 0.717948717948718,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.14814814814814814,
+      "recall": 0.6666666666666666
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 0.8,
+      "recall": 0.6153846153846154
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.8571428571428571
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.9473684210526315,
+      "recall": 0.9
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 1.0,
+      "recall": 0.3783783783783784
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      18
+     ],
+     [
+      "flaky_infra->unsure",
+      4
+     ],
+     [
+      "test_issue->code_defect",
+      3
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "static_check->code_defect",
+      1
+     ],
+     [
+      "flaky_infra->test_issue",
+      1
+     ],
+     [
+      "code_defect->test_issue",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.503,
+     0.775
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.25,
+      "accuracy": 0.2
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.905,
+      "accuracy": 0.947
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.375,
+      "accuracy": 0.389
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.614,
+      "accuracy": 0.737
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.694,
+      "accuracy": 0.526
+     }
+    }
+   },
+   "rung3 +clean": {
+    "n": 85,
+    "macroF1": 0.6666527561668226,
+    "accuracy": 0.6,
+    "coarseMacroF1": 0.7266537384184443,
+    "unsure": 8,
+    "missing": 0,
+    "highPrecision": 0.6666666666666666,
+    "highCoverage": 0.8470588235294118,
+    "fileN": 39,
+    "fileHit1": 0.6923076923076923,
+    "fileHit3": 0.717948717948718,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.14814814814814814,
+      "recall": 0.6666666666666666
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 0.8,
+      "recall": 0.6153846153846154
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.8571428571428571
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.9473684210526315,
+      "recall": 0.9
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 1.0,
+      "recall": 0.3783783783783784
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      19
+     ],
+     [
+      "flaky_infra->unsure",
+      4
+     ],
+     [
+      "test_issue->code_defect",
+      3
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "static_check->test_issue",
+      1
+     ],
+     [
+      "code_defect->test_issue",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.504,
+     0.775
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.167,
+      "accuracy": 0.1
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.905,
+      "accuracy": 0.947
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.375,
+      "accuracy": 0.389
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.576,
+      "accuracy": 0.684
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.757,
+      "accuracy": 0.632
+     }
+    }
+   },
+   "rung4 +retrieval": {
+    "n": 85,
+    "macroF1": 0.40731217707024153,
+    "accuracy": 0.5058823529411764,
+    "coarseMacroF1": 0.4686819563415308,
+    "unsure": 14,
+    "missing": 0,
+    "highPrecision": 0.6274509803921569,
+    "highCoverage": 0.6,
+    "fileN": 39,
+    "fileHit1": 0.23076923076923078,
+    "fileHit3": 0.23076923076923078,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.12,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 1.0,
+      "recall": 0.23076923076923078
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 0.6666666666666666,
+      "recall": 0.2857142857142857
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.8181818181818182,
+      "recall": 0.9
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 0.9444444444444444,
+      "recall": 0.4594594594594595
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      13
+     ],
+     [
+      "flaky_infra->unsure",
+      6
+     ],
+     [
+      "test_issue->code_defect",
+      5
+     ],
+     [
+      "dependency_env->code_defect",
+      3
+     ],
+     [
+      "test_issue->static_check",
+      2
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      2
+     ],
+     [
+      "code_defect->unsure",
+      2
+     ],
+     [
+      "code_defect->static_check",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ],
+     [
+      "dependency_env->unsure",
+      1
+     ],
+     [
+      "test_issue->flaky_infra",
+      1
+     ],
+     [
+      "flaky_infra->dependency_env",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "ci_config->unsure",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.306,
+     0.541
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.226,
+      "accuracy": 0.3
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.448,
+      "accuracy": 0.579
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.247,
+      "accuracy": 0.389
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.406,
+      "accuracy": 0.579
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.737,
+      "accuracy": 0.579
+     }
+    }
+   },
+   "rung5 +PR files": {
+    "n": 85,
+    "macroF1": 0.6284511784511785,
+    "accuracy": 0.6705882352941176,
+    "coarseMacroF1": 0.6988197767145136,
+    "unsure": 11,
+    "missing": 0,
+    "highPrecision": 0.8214285714285714,
+    "highCoverage": 0.6588235294117647,
+    "fileN": 39,
+    "fileHit1": 0.4358974358974359,
+    "fileHit3": 0.48717948717948717,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.21428571428571427,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 1.0,
+      "recall": 0.38461538461538464
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.5714285714285714
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.9,
+      "recall": 0.9
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 0.5,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 0.896551724137931,
+      "recall": 0.7027027027027027
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->unsure",
+      5
+     ],
+     [
+      "flaky_infra->code_defect",
+      5
+     ],
+     [
+      "test_issue->code_defect",
+      3
+     ],
+     [
+      "test_issue->flaky_infra",
+      3
+     ],
+     [
+      "dependency_env->code_defect",
+      2
+     ],
+     [
+      "static_check->unsure",
+      2
+     ],
+     [
+      "code_defect->unsure",
+      2
+     ],
+     [
+      "code_defect->static_check",
+      1
+     ],
+     [
+      "test_issue->static_check",
+      1
+     ],
+     [
+      "test_issue->unsure",
+      1
+     ],
+     [
+      "dependency_env->unsure",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "flaky_infra->ci_config",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.472,
+     0.756
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.354,
+      "accuracy": 0.5
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.642,
+      "accuracy": 0.684
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.486,
+      "accuracy": 0.611
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.61,
+      "accuracy": 0.737
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.789,
+      "accuracy": 0.737
+     }
+    }
+   },
+   "rung6 +3 examples": {
+    "n": 85,
+    "macroF1": 0.6406657669815564,
+    "accuracy": 0.6470588235294118,
+    "coarseMacroF1": 0.6984615384615385,
+    "unsure": 14,
+    "missing": 0,
+    "highPrecision": 0.8032786885245902,
+    "highCoverage": 0.7176470588235294,
+    "fileN": 39,
+    "fileHit1": 0.46153846153846156,
+    "fileHit3": 0.5128205128205128,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.23076923076923078,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 0.8571428571428571,
+      "recall": 0.46153846153846156
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.42857142857142855
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.9473684210526315,
+      "recall": 0.9
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 0.8571428571428571,
+      "recall": 0.6486486486486487
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      7
+     ],
+     [
+      "flaky_infra->unsure",
+      5
+     ],
+     [
+      "code_defect->unsure",
+      3
+     ],
+     [
+      "dependency_env->unsure",
+      3
+     ],
+     [
+      "test_issue->flaky_infra",
+      3
+     ],
+     [
+      "test_issue->code_defect",
+      2
+     ],
+     [
+      "static_check->unsure",
+      2
+     ],
+     [
+      "flaky_infra->test_issue",
+      1
+     ],
+     [
+      "test_issue->static_check",
+      1
+     ],
+     [
+      "test_issue->unsure",
+      1
+     ],
+     [
+      "dependency_env->flaky_infra",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.454,
+     0.761
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.343,
+      "accuracy": 0.4
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.726,
+      "accuracy": 0.737
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.468,
+      "accuracy": 0.556
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.396,
+      "accuracy": 0.632
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.837,
+      "accuracy": 0.789
+     }
+    }
+   },
+   "final tail200+files": {
+    "n": 85,
+    "macroF1": 0.7406266735214103,
+    "accuracy": 0.7529411764705882,
+    "coarseMacroF1": 0.7927202621939464,
+    "unsure": 8,
+    "missing": 0,
+    "highPrecision": 0.8513513513513513,
+    "highCoverage": 0.8705882352941177,
+    "fileN": 39,
+    "fileHit1": 0.6923076923076923,
+    "fileHit3": 0.7692307692307693,
+    "perClass": {
+     "code_defect": {
+      "n": 6,
+      "precision": 0.3333333333333333,
+      "recall": 0.6666666666666666
+     },
+     "test_issue": {
+      "n": 13,
+      "precision": 0.8181818181818182,
+      "recall": 0.6923076923076923
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571
+     },
+     "static_check": {
+      "n": 20,
+      "precision": 0.9444444444444444,
+      "recall": 0.85
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 37,
+      "precision": 0.9642857142857143,
+      "recall": 0.7297297297297297
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      5
+     ],
+     [
+      "flaky_infra->unsure",
+      4
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ],
+     [
+      "test_issue->code_defect",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "static_check->test_issue",
+      1
+     ],
+     [
+      "code_defect->test_issue",
+      1
+     ],
+     [
+      "flaky_infra->dependency_env",
+      1
+     ],
+     [
+      "test_issue->flaky_infra",
+      1
+     ],
+     [
+      "static_check->code_defect",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.568,
+     0.857
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.354,
+      "accuracy": 0.4
+     },
+     "astral-sh/uv": {
+      "n": 19,
+      "macroF1": 0.905,
+      "accuracy": 0.947
+     },
+     "prometheus/prometheus": {
+      "n": 18,
+      "macroF1": 0.859,
+      "accuracy": 0.722
+     },
+     "pydantic/pydantic": {
+      "n": 19,
+      "macroF1": 0.648,
+      "accuracy": 0.789
+     },
+     "vitejs/vite": {
+      "n": 19,
+      "macroF1": 0.816,
+      "accuracy": 0.737
+     }
+    }
+   }
+  },
+  "ladder": {
+   "rung1 rules -> rung2 tail200": {
+    "n": 85,
+    "difference": 0.302,
+    "CI": [
+     0.121,
+     0.442
+    ]
+   },
+   "rung2 tail200 -> rung3 +clean": {
+    "n": 85,
+    "difference": 0.0,
+    "CI": [
+     -0.027,
+     0.027
+    ]
+   },
+   "rung3 +clean -> rung4 +retrieval": {
+    "n": 85,
+    "difference": -0.259,
+    "CI": [
+     -0.393,
+     -0.084
+    ]
+   },
+   "rung4 +retrieval -> rung5 +PR files": {
+    "n": 85,
+    "difference": 0.221,
+    "CI": [
+     0.06,
+     0.356
+    ]
+   },
+   "rung5 +PR files -> rung6 +3 examples": {
+    "n": 85,
+    "difference": 0.012,
+    "CI": [
+     -0.081,
+     0.086
+    ]
+   }
+  },
+  "checks": {
+   "final (deviation)": {
+    "versusRules": {
+     "n": 85,
+     "difference": 0.376,
+     "CI": [
+      0.177,
+      0.522
+     ]
+    },
+    "criteria": {
+     "1 beats rules by >=0.10, CI>0": true,
+     "2 high-conf precision >=0.80 on >=50%": true,
+     "3 file hit@1 >=0.50": true
+    }
+   },
+   "final (original rules) = rung2": {
+    "versusRules": {
+     "n": 85,
+     "difference": 0.302,
+     "CI": [
+      0.121,
+      0.442
+     ]
+    },
+    "criteria": {
+     "1 beats rules by >=0.10, CI>0": true,
+     "2 high-conf precision >=0.80 on >=50%": false,
+     "3 file hit@1 >=0.50": true
+    }
+   }
+  }
+ },
+ "74 (sensitivity)": {
+  "systems": {
+   "rung0 majority": {
+    "n": 74,
+    "macroF1": 0.06810035842293907,
+    "accuracy": 0.25675675675675674,
+    "coarseMacroF1": 0.08172043010752689,
+    "unsure": 0,
+    "missing": 0,
+    "highPrecision": null,
+    "highCoverage": 0.0,
+    "fileN": 34,
+    "fileHit1": 0.0,
+    "fileHit3": 0.0,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": null,
+      "recall": 0.0
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": null,
+      "recall": 0.0
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.25675675675675674,
+      "recall": 1.0
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": null,
+      "recall": 0.0
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->static_check",
+      32
+     ],
+     [
+      "test_issue->static_check",
+      12
+     ],
+     [
+      "dependency_env->static_check",
+      7
+     ],
+     [
+      "code_defect->static_check",
+      2
+     ],
+     [
+      "ci_config->static_check",
+      2
+     ]
+    ],
+    "macroF1CI": [
+     0.047,
+     0.102
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.083,
+      "accuracy": 0.2
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 0.119,
+      "accuracy": 0.312
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.0,
+      "accuracy": 0.0
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.107,
+      "accuracy": 0.471
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.1,
+      "accuracy": 0.25
+     }
+    }
+   },
+   "rung1 rules": {
+    "n": 74,
+    "macroF1": 0.38059246954595793,
+    "accuracy": 0.5675675675675675,
+    "coarseMacroF1": 0.4222571819425444,
+    "unsure": 1,
+    "missing": 0,
+    "highPrecision": 0.6730769230769231,
+    "highCoverage": 0.7027027027027027,
+    "fileN": 34,
+    "fileHit1": 0.20588235294117646,
+    "fileHit3": 0.23529411764705882,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.08333333333333333,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 0.625,
+      "recall": 0.4166666666666667
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.14285714285714285
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.7083333333333334,
+      "recall": 0.8947368421052632
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 0.6428571428571429,
+      "recall": 0.5625
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      9
+     ],
+     [
+      "test_issue->flaky_infra",
+      5
+     ],
+     [
+      "dependency_env->static_check",
+      4
+     ],
+     [
+      "flaky_infra->test_issue",
+      3
+     ],
+     [
+      "test_issue->code_defect",
+      2
+     ],
+     [
+      "flaky_infra->static_check",
+      2
+     ],
+     [
+      "dependency_env->flaky_infra",
+      2
+     ],
+     [
+      "static_check->flaky_infra",
+      2
+     ],
+     [
+      "code_defect->static_check",
+      1
+     ],
+     [
+      "ci_config->flaky_infra",
+      1
+     ],
+     [
+      "ci_config->unsure",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.284,
+     0.531
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.393,
+      "accuracy": 0.4
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 0.553,
+      "accuracy": 0.75
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.254,
+      "accuracy": 0.533
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.398,
+      "accuracy": 0.588
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.433,
+      "accuracy": 0.5
+     }
+    }
+   },
+   "rung2 tail200": {
+    "n": 74,
+    "macroF1": 0.6462248962248962,
+    "accuracy": 0.6081081081081081,
+    "coarseMacroF1": 0.7220499620499621,
+    "unsure": 8,
+    "missing": 0,
+    "highPrecision": 0.6984126984126984,
+    "highCoverage": 0.8513513513513513,
+    "fileN": 34,
+    "fileHit1": 0.6764705882352942,
+    "fileHit3": 0.7058823529411765,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.05,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 0.875,
+      "recall": 0.5833333333333334
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.8571428571428571
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.9444444444444444,
+      "recall": 0.8947368421052632
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 1.0,
+      "recall": 0.40625
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      14
+     ],
+     [
+      "flaky_infra->unsure",
+      4
+     ],
+     [
+      "test_issue->code_defect",
+      3
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "static_check->code_defect",
+      1
+     ],
+     [
+      "flaky_infra->test_issue",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.492,
+     0.827
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.25,
+      "accuracy": 0.2
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 1.0,
+      "accuracy": 1.0
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.394,
+      "accuracy": 0.333
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.572,
+      "accuracy": 0.706
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.728,
+      "accuracy": 0.625
+     }
+    }
+   },
+   "rung3 +clean": {
+    "n": 74,
+    "macroF1": 0.6462248962248962,
+    "accuracy": 0.6081081081081081,
+    "coarseMacroF1": 0.7220499620499621,
+    "unsure": 8,
+    "missing": 0,
+    "highPrecision": 0.6935483870967742,
+    "highCoverage": 0.8378378378378378,
+    "fileN": 34,
+    "fileHit1": 0.6764705882352942,
+    "fileHit3": 0.7058823529411765,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.05,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 0.875,
+      "recall": 0.5833333333333334
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.8571428571428571
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.9444444444444444,
+      "recall": 0.8947368421052632
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 1.0,
+      "recall": 0.40625
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      15
+     ],
+     [
+      "flaky_infra->unsure",
+      4
+     ],
+     [
+      "test_issue->code_defect",
+      3
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "static_check->test_issue",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.494,
+     0.824
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.167,
+      "accuracy": 0.1
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 1.0,
+      "accuracy": 1.0
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.394,
+      "accuracy": 0.333
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.572,
+      "accuracy": 0.706
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.77,
+      "accuracy": 0.688
+     }
+    }
+   },
+   "rung4 +retrieval": {
+    "n": 74,
+    "macroF1": 0.3894422952933591,
+    "accuracy": 0.5,
+    "coarseMacroF1": 0.45563542265669926,
+    "unsure": 12,
+    "missing": 0,
+    "highPrecision": 0.6363636363636364,
+    "highCoverage": 0.5945945945945946,
+    "fileN": 34,
+    "fileHit1": 0.20588235294117646,
+    "fileHit3": 0.20588235294117646,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.05,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 1.0,
+      "recall": 0.25
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 0.6666666666666666,
+      "recall": 0.2857142857142857
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.8095238095238095,
+      "recall": 0.8947368421052632
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": null,
+      "recall": 0.0
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 0.9333333333333333,
+      "recall": 0.4375
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      11
+     ],
+     [
+      "flaky_infra->unsure",
+      6
+     ],
+     [
+      "test_issue->code_defect",
+      4
+     ],
+     [
+      "dependency_env->code_defect",
+      3
+     ],
+     [
+      "test_issue->static_check",
+      2
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      2
+     ],
+     [
+      "code_defect->static_check",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ],
+     [
+      "dependency_env->unsure",
+      1
+     ],
+     [
+      "test_issue->flaky_infra",
+      1
+     ],
+     [
+      "flaky_infra->dependency_env",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "ci_config->unsure",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.288,
+     0.536
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.226,
+      "accuracy": 0.3
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 0.556,
+      "accuracy": 0.625
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.19,
+      "accuracy": 0.267
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.389,
+      "accuracy": 0.588
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.75,
+      "accuracy": 0.625
+     }
+    }
+   },
+   "rung5 +PR files": {
+    "n": 74,
+    "macroF1": 0.6083008838426794,
+    "accuracy": 0.6756756756756757,
+    "coarseMacroF1": 0.7015447710184552,
+    "unsure": 9,
+    "missing": 0,
+    "highPrecision": 0.82,
+    "highCoverage": 0.6756756756756757,
+    "fileN": 34,
+    "fileHit1": 0.47058823529411764,
+    "fileHit3": 0.5294117647058824,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.09090909090909091,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 1.0,
+      "recall": 0.4166666666666667
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.5714285714285714
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.8947368421052632,
+      "recall": 0.8947368421052632
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 0.5,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 0.9166666666666666,
+      "recall": 0.6875
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->unsure",
+      5
+     ],
+     [
+      "flaky_infra->code_defect",
+      4
+     ],
+     [
+      "test_issue->code_defect",
+      3
+     ],
+     [
+      "dependency_env->code_defect",
+      2
+     ],
+     [
+      "test_issue->flaky_infra",
+      2
+     ],
+     [
+      "static_check->unsure",
+      2
+     ],
+     [
+      "code_defect->static_check",
+      1
+     ],
+     [
+      "test_issue->static_check",
+      1
+     ],
+     [
+      "test_issue->unsure",
+      1
+     ],
+     [
+      "dependency_env->unsure",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "flaky_infra->ci_config",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.461,
+     0.775
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.354,
+      "accuracy": 0.5
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 0.797,
+      "accuracy": 0.75
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.497,
+      "accuracy": 0.6
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.642,
+      "accuracy": 0.765
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.765,
+      "accuracy": 0.688
+     }
+    }
+   },
+   "rung6 +3 examples": {
+    "n": 74,
+    "macroF1": 0.6248304524620314,
+    "accuracy": 0.6621621621621622,
+    "coarseMacroF1": 0.7071171171171171,
+    "unsure": 12,
+    "missing": 0,
+    "highPrecision": 0.8269230769230769,
+    "highCoverage": 0.7027027027027027,
+    "fileN": 34,
+    "fileHit1": 0.5,
+    "fileHit3": 0.5588235294117647,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.1111111111111111,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 0.8571428571428571,
+      "recall": 0.5
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 1.0,
+      "recall": 0.42857142857142855
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.9444444444444444,
+      "recall": 0.8947368421052632
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 0.875,
+      "recall": 0.65625
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->unsure",
+      5
+     ],
+     [
+      "flaky_infra->code_defect",
+      5
+     ],
+     [
+      "dependency_env->unsure",
+      3
+     ],
+     [
+      "test_issue->code_defect",
+      2
+     ],
+     [
+      "test_issue->flaky_infra",
+      2
+     ],
+     [
+      "static_check->unsure",
+      2
+     ],
+     [
+      "flaky_infra->test_issue",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "test_issue->static_check",
+      1
+     ],
+     [
+      "test_issue->unsure",
+      1
+     ],
+     [
+      "dependency_env->flaky_infra",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.445,
+     0.787
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.343,
+      "accuracy": 0.4
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 0.903,
+      "accuracy": 0.812
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.472,
+      "accuracy": 0.533
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.461,
+      "accuracy": 0.706
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.813,
+      "accuracy": 0.75
+     }
+    }
+   },
+   "final tail200+files": {
+    "n": 74,
+    "macroF1": 0.6993386243386244,
+    "accuracy": 0.7432432432432432,
+    "coarseMacroF1": 0.775857654889913,
+    "unsure": 8,
+    "missing": 0,
+    "highPrecision": 0.859375,
+    "highCoverage": 0.8648648648648649,
+    "fileN": 34,
+    "fileHit1": 0.7058823529411765,
+    "fileHit3": 0.7941176470588235,
+    "perClass": {
+     "code_defect": {
+      "n": 2,
+      "precision": 0.125,
+      "recall": 0.5
+     },
+     "test_issue": {
+      "n": 12,
+      "precision": 0.8888888888888888,
+      "recall": 0.6666666666666666
+     },
+     "dependency_env": {
+      "n": 7,
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571
+     },
+     "static_check": {
+      "n": 19,
+      "precision": 0.9411764705882353,
+      "recall": 0.8421052631578947
+     },
+     "ci_config": {
+      "n": 2,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "flaky_infra": {
+      "n": 32,
+      "precision": 0.9583333333333334,
+      "recall": 0.71875
+     }
+    },
+    "confusion": [
+     [
+      "flaky_infra->code_defect",
+      4
+     ],
+     [
+      "flaky_infra->unsure",
+      4
+     ],
+     [
+      "test_issue->unsure",
+      2
+     ],
+     [
+      "static_check->unsure",
+      1
+     ],
+     [
+      "code_defect->unsure",
+      1
+     ],
+     [
+      "dependency_env->static_check",
+      1
+     ],
+     [
+      "test_issue->code_defect",
+      1
+     ],
+     [
+      "ci_config->code_defect",
+      1
+     ],
+     [
+      "static_check->test_issue",
+      1
+     ],
+     [
+      "flaky_infra->dependency_env",
+      1
+     ],
+     [
+      "test_issue->flaky_infra",
+      1
+     ],
+     [
+      "static_check->code_defect",
+      1
+     ]
+    ],
+    "macroF1CI": [
+     0.539,
+     0.864
+    ],
+    "perRepo": {
+     "apache/kafka": {
+      "n": 10,
+      "macroF1": 0.354,
+      "accuracy": 0.4
+     },
+     "astral-sh/uv": {
+      "n": 16,
+      "macroF1": 1.0,
+      "accuracy": 1.0
+     },
+     "prometheus/prometheus": {
+      "n": 15,
+      "macroF1": 0.894,
+      "accuracy": 0.733
+     },
+     "pydantic/pydantic": {
+      "n": 17,
+      "macroF1": 0.615,
+      "accuracy": 0.765
+     },
+     "vitejs/vite": {
+      "n": 16,
+      "macroF1": 0.779,
+      "accuracy": 0.688
+     }
+    }
+   }
+  },
+  "ladder": {
+   "rung1 rules -> rung2 tail200": {
+    "n": 74,
+    "difference": 0.266,
+    "CI": [
+     0.08,
+     0.422
+    ]
+   },
+   "rung2 tail200 -> rung3 +clean": {
+    "n": 74,
+    "difference": 0.0,
+    "CI": [
+     -0.024,
+     0.023
+    ]
+   },
+   "rung3 +clean -> rung4 +retrieval": {
+    "n": 74,
+    "difference": -0.257,
+    "CI": [
+     -0.403,
+     -0.089
+    ]
+   },
+   "rung4 +retrieval -> rung5 +PR files": {
+    "n": 74,
+    "difference": 0.219,
+    "CI": [
+     0.067,
+     0.364
+    ]
+   },
+   "rung5 +PR files -> rung6 +3 examples": {
+    "n": 74,
+    "difference": 0.017,
+    "CI": [
+     -0.082,
+     0.095
+    ]
+   }
+  },
+  "checks": {
+   "final (deviation)": {
+    "versusRules": {
+     "n": 74,
+     "difference": 0.319,
+     "CI": [
+      0.12,
+      0.483
+     ]
+    },
+    "criteria": {
+     "1 beats rules by >=0.10, CI>0": true,
+     "2 high-conf precision >=0.80 on >=50%": true,
+     "3 file hit@1 >=0.50": true
+    }
+   },
+   "final (original rules) = rung2": {
+    "versusRules": {
+     "n": 74,
+     "difference": 0.266,
+     "CI": [
+      0.08,
+      0.422
+     ]
+    },
+    "criteria": {
+     "1 beats rules by >=0.10, CI>0": true,
+     "2 high-conf precision >=0.80 on >=50%": false,
+     "3 file hit@1 >=0.50": true
+    }
+   }
+  }
+ }
+}
