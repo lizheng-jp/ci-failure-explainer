@@ -31,6 +31,11 @@ RUNS = Path("runs")
 ROUNDS = {
     "r1": {f"r{rung}_tail{n}_{think}": (config(rung=rung, tail=n), think)
            for rung in (2, 3) for n in (100, 200, 400) for think in ("low", "medium")},
+    # Round 2: rung 4 grid, the same grid with the PR file list (rung 5), and round 1's selected system plus the
+    # file list, which is what the final system becomes if retrieval is not kept. Thinking fixed to low.
+    "r2": {**{f"r{rung}_c{c}_k{k}_{q}": (config(rung=rung, chunk=c, k=k, query=q), "low")
+              for rung in (4, 5) for c in (200, 400) for k in (4, 8) for q in ("fixed", "step")},
+           "x_tail200_files": (config(rung=2, tail=200, files=1), "low")},
 }
 
 

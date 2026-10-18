@@ -225,26 +225,32 @@ def error_lines(lines: list[str]) -> tuple[str, list[str]]:
     return header, hits
 
 
-def query_text(sample_id: str, cfg: dict) -> str:
-    if cfg["query"] == "fixed":
-        return FIXED_QUERY
-    # "step": each shown job's failing step and its last error-looking lines, so no job crowds out the others.
-    parts = []
-    for _, lines in jobs(sample_id, {"clean": 1}):
-        header, hits = error_lines(lines)
-        parts.append("\n".join([header[:200]] + [h[:200] for h in hits[-3:]]))
-    return "\n".join(parts)
+def query_texts(sample_id: str, cfg: dict) -> dict[str, str]:
+    """One query per shown job. "fixed" is the same sentence for every job; "step" is the job's failing step
+    and its last error-looking lines. Each job's chunks are scored against that job's own query, so one job's
+    query cannot crowd another's out of bge's 512-token window."""
+    queries = {}
+    for name, lines in jobs(sample_id, {"clean": 1}):
+        if cfg["query"] == "fixed":
+            queries[name] = FIXED_QUERY
+        else:
+            header, hits = error_lines(lines)
+            queries[name] = "\n".join([header[:200]] + [h[:200] for h in hits[-3:]])
+    return queries
 
 
 def retrieve(sample_id: str, cfg: dict) -> list[int]:
     """Indices of the k chosen chunks: the best chunk of every shown job first, then the best of the rest."""
     import numpy as np
     pieces = chunks(sample_id, cfg["clean"], cfg["chunk"])
-    scores = chunk_vectors(sample_id, cfg) @ encoder().encode([BGE_QUERY_PREFIX + query_text(sample_id, cfg)],
-                                                               normalize_embeddings=True)[0]
+    queries = query_texts(sample_id, cfg)
+    names = list(queries)
+    query_vectors = encoder().encode([BGE_QUERY_PREFIX + queries[n] for n in names], normalize_embeddings=True)
+    vectors = chunk_vectors(sample_id, cfg)
+    scores = np.array([vectors[i] @ query_vectors[names.index(piece[0])] for i, piece in enumerate(pieces)])
     ranked = [int(i) for i in np.argsort(-scores)]
     chosen: list[int] = []
-    for name, _ in jobs(sample_id, cfg):
+    for name in names:
         best = next((i for i in ranked if pieces[i][0] == name), None)
         if best is not None and len(chosen) < cfg["k"]:
             chosen.append(best)
