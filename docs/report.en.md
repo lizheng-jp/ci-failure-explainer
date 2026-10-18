@@ -1,8 +1,7 @@
 # Diagnosing CI failures with an LLM: evaluation report
 
-> 2026-10-18. The pre-registered plan is [plan.zh-CN.md](plan.zh-CN.md) (Chinese; section 12 logs every
-> deviation). Data, labels, code and every raw model answer are in this repository; the commands at the end
-> reproduce each number. A Chinese version of this report is [report.zh-CN.md](report.zh-CN.md).
+> 2026-10-18. The pre-registered plan is [plan.md](plan.md) (section 12 logs every deviation). Data, labels,
+> code and every raw model answer are in this repository; the commands at the end reproduce each number.
 
 ## Summary
 
@@ -78,8 +77,7 @@ changed-file list added, all three criteria are met.
 | 6 | + 3 worked examples | 0.64 | +0.01 [-0.08, 0.09] | 0.52 |
 | final | last 200 lines + PR file list | **0.74** | +0.38 over rules | 0.60 |
 
-Each rung adds one change to the one before, in an order fixed in advance. (The figure labels are in Chinese;
-the table above gives the same values.)
+Each rung adds one change to the one before, in an order fixed in advance.
 
 - **The LLM itself is the biggest step** (+0.30). The rules fell from 0.50 on dev to 0.36 on test: they
   encode features of the dev repositories (Gradle `checkFormat` task names, Rust `in crate libc`) that do not
