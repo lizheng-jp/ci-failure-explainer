@@ -1,0 +1,33 @@
+name: CI failure explainer
+description: >-
+  Comments on the pull request with the likely cause of a failed GitHub Actions run and the files to look at,
+  using the configuration evaluated in docs/report.en.md (gemini-3.8-flash, last 200 log lines + PR file list).
+inputs:
+  run-id:
+    description: ID of the failed workflow run (github.event.workflow_run.id in a workflow_run trigger)
+    required: true
+  gemini-api-key:
+    description: Gemini API key
+    required: true
+  github-token:
+    description: Token that can read the run's logs and comment on the pull request
+    default: ${{ github.token }}
+  dry-run:
+    description: Print the comment in the job log instead of posting it
+    default: "false"
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - shell: bash
+      run: python -m pip install --quiet google-genai==2.31.0
+    - shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        GEMINI_API_KEY: ${{ inputs.gemini-api-key }}
+      run: >-
+        python "${{ github.action_path }}/action/explain.py"
+        --repo "${{ github.repository }}" --run-id "${{ inputs.run-id }}"
+        ${{ inputs.dry-run == 'true' && '--dry-run' || '' }}

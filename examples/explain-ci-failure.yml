@@ -1,0 +1,20 @@
+# Copy into .github/workflows/ of the repository whose CI you want explained, and add a GEMINI_API_KEY secret.
+# workflow_run runs in the base repository with its secrets, so it also covers pull requests from forks.
+# It never checks out or runs the pull request's code: it only reads the failed run's logs and file list.
+name: Explain CI failures
+on:
+  workflow_run:
+    workflows: ["CI"]          # the name of the workflow to watch
+    types: [completed]
+permissions:
+  actions: read                # read the failed run's logs
+  pull-requests: write         # comment on the pull request
+jobs:
+  explain:
+    if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lizheng-jp/ci-failure-explainer@main
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          gemini-api-key: ${{ secrets.GEMINI_API_KEY }}

@@ -1,0 +1,27 @@
+# Reusable workflow wrapping the action, for repositories that prefer `uses:` at job level:
+#   jobs:
+#     explain:
+#       uses: lizheng-jp/ci-failure-explainer/.github/workflows/explain.yml@main
+#       with: {run-id: "${{ github.event.workflow_run.id }}"}
+#       secrets: {GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}"}
+name: Explain a failed run
+on:
+  workflow_call:
+    inputs:
+      run-id:
+        type: string
+        required: true
+    secrets:
+      GEMINI_API_KEY:
+        required: true
+permissions:
+  actions: read
+  pull-requests: write
+jobs:
+  explain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lizheng-jp/ci-failure-explainer@main
+        with:
+          run-id: ${{ inputs.run-id }}
+          gemini-api-key: ${{ secrets.GEMINI_API_KEY }}

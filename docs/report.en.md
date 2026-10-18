@@ -178,8 +178,10 @@ Levers, cheapest first:
    within minutes to hours.
 3. **Cap very long inputs**: the largest sample alone costs about 8 times the median.
 
-Not measured: per-failure latency. Batch queueing time says nothing about synchronous response time; the smoke
-test's synchronous calls returned in seconds, but this was not timed.
+Latency was not part of the evaluation (all evaluation calls went through the Batch API, whose queueing time
+says nothing about a live response). Informally, two dry runs of the action on live failures (prometheus run
+39104566012, vite run 39105100070), from fetching the logs to the finished comment, took 18 s and 9 s and used
+21,093 and 30,146 input tokens (US$0.017 and US$0.023).
 
 ## 8. How far to trust this
 
