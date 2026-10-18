@@ -4,3 +4,4 @@ data/*.tmp
 __pycache__/
 .venv/
 data/cache/
+.claude/
